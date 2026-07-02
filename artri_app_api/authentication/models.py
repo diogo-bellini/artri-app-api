@@ -64,7 +64,7 @@ class TrainingExercise(models.Model):
         ordering = ['order'] # O Django sempre vai devolver os exercícios ordenados por este campo
 
 class Training(models.Model):
-    name = models.CharField(max_length=50)
+    name = models.CharField(max_length=255)
     description = models.TextField()
     # Adicionamos o 'through' para avisar o Django que a relação agora tem uma ordem
     exercises = models.ManyToManyField(Exercise, through=TrainingExercise)

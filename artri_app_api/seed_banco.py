@@ -29,7 +29,7 @@ def reset_and_seed(csv_path):
     exercicios_processados = 0
     
     with open(csv_path, mode='r', encoding='utf-8-sig') as file:
-        reader = csv.DictReader(file)
+        reader = csv.DictReader(file, delimiter=';')
         # Limpa os cabeçalhos para evitar erros com espaços invisíveis
         reader.fieldnames = [str(field).strip() for field in reader.fieldnames if field]
         
